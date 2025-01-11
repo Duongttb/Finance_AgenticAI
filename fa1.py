@@ -13,6 +13,8 @@ import yfinance as yf
 # Get API key from Streamlit secrets
 GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
 
+llm_model = "llama-3.2-11b-vision-preview"
+
 # Enhanced stock symbol mappings
 COMMON_STOCKS = {
     # US Stocks
@@ -112,7 +114,6 @@ if 'agents_initialized' not in st.session_state:
 
 def initialize_agents():
     """Initialize all agent instances with improved error handling"""
-    llm_model = "llama4-groq-80b"
     if not st.session_state.agents_initialized:
         try:
             st.session_state.web_agent = Agent(
