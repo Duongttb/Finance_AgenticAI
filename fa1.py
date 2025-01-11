@@ -112,7 +112,7 @@ if 'agents_initialized' not in st.session_state:
 
 def initialize_agents():
     """Initialize all agent instances with improved error handling"""
-    llm_model = "llama-3.3-70b-versatile"
+    llm_model = "llama4-groq-80b"
     if not st.session_state.agents_initialized:
         try:
             st.session_state.web_agent = Agent(
